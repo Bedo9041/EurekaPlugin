@@ -34,30 +34,30 @@
     <Reference Include="Dalamud, Version=5.0.0.2, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="ImGui.NET, Version=1.72.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\ImGui.NET.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\ImGui.NET.dll</HintPath>
     </Reference>
     <Reference Include="ImGuiScene, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\ImGuiScene.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\ImGuiScene.dll</HintPath>
     </Reference>
     <Reference Include="Lumina, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\Lumina.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\Lumina.dll</HintPath>
     </Reference>
     <Reference Include="Lumina.Generated, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\Lumina.Generated.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\Lumina.Generated.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\Newtonsoft.Json.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Edward-Main\AppData\Roaming\XIVLauncher\addon\Hooks\System.Numerics.Vectors.dll</HintPath>
+      <HintPath>${appdata}\XIVLauncher\addon\Hooks\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
