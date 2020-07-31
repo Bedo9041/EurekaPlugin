@@ -24,25 +24,11 @@ namespace EurekaPlugin
             this.ui = new EurekaTrackerUI(pluginInterface, this);
             this.pluginInterface = pluginInterface;
             this.pluginInterface.UiBuilder.OnBuildUi += DrawUI;
-            this.pluginInterface.Framework.Gui.Chat.OnChatMessage += Chat_OnChatMessage;
             connection = null; 
             this.pluginInterface.CommandManager.AddHandler("/peureka", new CommandInfo(OnCommand)
             {
-                HelpMessage = "A useful message to display in /xlhelp"
+                HelpMessage = "Open the Eureka Tracker menu"
             });
-        }
-
-        private void Chat_OnChatMessage(XivChatType type, uint senderId, ref SeString sender, ref SeString message, ref bool isHandled)
-        {
-            List<Payload> payloads = message.Payloads;
-            foreach (Payload payload in payloads)
-            {
-                if (payload.Type == PayloadType.MapLink)
-                {
-                    MapLinkPayload mapLinkPayload = (MapLinkPayload)payload;
-                    PluginLog.Log(payload.ToString());
-                }
-            }
         }
 
         private void OnCommand(string command, string arguments)
@@ -74,7 +60,6 @@ namespace EurekaPlugin
         public void Dispose()
         {
             this.pluginInterface.UiBuilder.OnBuildUi -= DrawUI;
-            this.pluginInterface.Framework.Gui.Chat.OnChatMessage -= Chat_OnChatMessage;
             if (connection != null)
             {
                 connection.Dispose();

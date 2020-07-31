@@ -56,8 +56,8 @@ namespace EurekaPlugin
             if (!Visible)
                 return;
 
-            ImGui.SetNextWindowSize(new Vector2(380, 330), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(375, 330), new Vector2(float.MaxValue, float.MaxValue));
+            ImGui.SetNextWindowSize(new Vector2(680, 505), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(680, 315), new Vector2(float.MaxValue, float.MaxValue));
             if (ImGui.Begin("Eureka Tracker", ref this.visible, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
             {
                 if (plugin.getConnection() == null || !plugin.getConnection().IsConnected() || plugin.getConnection().GetTracker() == null || plugin.getConnection().GetTracker().GetMonsters().Count < 10) // If we're not currently connected, draw the connection UI

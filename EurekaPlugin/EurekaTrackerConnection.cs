@@ -60,7 +60,6 @@ namespace EurekaPlugin
 
         public async Task Send(string data)
         {
-            PluginLog.Log("Sending Outbound Message: \"" + data + "\"");
             await Socket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(data)), WebSocketMessageType.Text, true, CancellationTokenSource.Token);
         }
 
@@ -74,7 +73,6 @@ namespace EurekaPlugin
                 {
                     do
                     {
-                        PluginLog.Log("Waiting to recieve data...");
                         result = await Socket.ReceiveAsync(buffer, CancellationTokenSource.Token);
                         memoryStream.Write(buffer.Array, buffer.Offset, result.Count);
                     } while (!result.EndOfMessage);
@@ -86,7 +84,6 @@ namespace EurekaPlugin
                     using (StreamReader reader = new StreamReader(memoryStream, Encoding.UTF8))
                     {
                         string data = await reader.ReadToEndAsync();
-                        PluginLog.Log("Recieved Inbound Message: \"" + data + "\"");
                         JArray messageArray = JArray.Parse(data);
                         EurekaTrackerMessage message = new EurekaTrackerMessage (
                             messageArray[0].Type != JTokenType.Null,
@@ -223,7 +220,6 @@ namespace EurekaPlugin
         public async Task SetKilled(int monsterId, long killTime)
         {
             SetKillTimeMessage preppedMessage = new SetKillTimeMessage(monsterId, killTime);
-            PluginLog.Log(JsonConvert.SerializeObject(preppedMessage));
             EurekaTrackerMessage message = new EurekaTrackerMessage(true, NextMessageId, GetInstanceChannel(), "set_kill_time", JObject.Parse(JsonConvert.SerializeObject(preppedMessage)));
             NextMessageId++;
             await Send(message.ToMessage());
@@ -346,7 +342,7 @@ namespace EurekaPlugin
 
         public void Dispose()
         {
-            CancellationTokenSource.Cancel();
+            Leave();
         }
     }
 }
